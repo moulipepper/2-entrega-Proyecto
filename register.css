@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+body {
+    background: url('logo/logoDS.jpg') no-repeat center center fixed;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0); /* Fondo semi-transparente */
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+label {
+    text-align: left;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0); /* Fondo transparente */
+    color: #fff;
+    font-size: 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Subraya en lugar de ser un bloque */
+    width: 100%; /* Mantiene el ancho completo del contenedor */
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-bottom: 5px solid #fff; /* Cambia el color del subrayado al enfocar */
+}
+
+button[type="submit"] {
+    background-color: #3D0A49;
+    color: #E0DAF7;
+    font-size: 16px;
+    font-weight: medium;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.back-btn {
+    background-color: #E0DAF7;
+    color: #3D0A49;
+    font-size: 16px;
+    font-weight: medium;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #8a2be2;
+    color: #E0DAF7;
+}
+
+.back-btn:hover {
+    background-color: #8a2be2;
+    color: #E0DAF7;
+}
+
+.message-container {
+    margin-top: 20px;
+    font-weight: medium;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}

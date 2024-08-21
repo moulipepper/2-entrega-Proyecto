@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+}
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3D0A49;
+    padding: 15px 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 300;
+    color: #E0DAF7;
+}
+
+.nav ul {
+    background-color: #E0DAF7;
+    margin: 10px;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav ul li {
+    background-color: #E0DAF7;
+    margin: 0 5px;
+}
+
+.nav ul li button {
+    background-color: #E0DAF7;
+    border: none;
+    color: #3D0A49;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main-content {
+    flex: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 4 columnas de igual ancho */
+    padding: 20px;
+    width: 100%;
+}
+
+.about, .hours, .service {
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.services-hours {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+
+.service, .hours {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.about p {
+    max-width: 100%; /* Ajustado para no desbordar */
+    margin: 0 10px 10px 0;
+    text-align: justify;
+}
+
+.barber-img {
+    width: 100%;
+    max-width: 300px; /* Tamaño ajustado para las imágenes de la galería */
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #3D0A49;
+    color: #E0DAF7;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.hours ul, .service ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hours ul li, .service ul li {
+    margin: 5px 0;
+}
+
+.hours ul li span, .service ul li span {
+    font-weight: bold;
+}
+
+.top-footer {
+    background-color: #E0DAF7;
+    height: 25px;
+    width: 100%;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #3D0A49;
+    padding: 15px 10px;
+    color: #E0DAF7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-text {
+    color: #E0DAF7;
+    font-size: 14px;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: auto;
+    margin-left: 40px;
+    border-radius: 20%;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social a img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 260px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    text-align: right;
+}
+
+.modal-buttons button {
+    margin-left: 5px;
+}
+
+/* Estilos para la galería de imágenes */
+.image-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 200px; /* Ajusta el tamaño máximo de la galería */
+    overflow: hidden;
+    margin: 50px auto; /* Centra la galería con un margen */
+}
+
+.gallery-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-image {
+    min-width: 100%;
+    box-sizing: border-box;
+    object-fit: cover; /* Ajuste para cubrir el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.gallery-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none; /* No interferir con otros elementos */
+}
+
+.gallery-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    pointer-events: all; /* Permitir clics en los botones */
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+    }
+
+    .nav ul li {
+        margin: 5px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about p {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .barber-img {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .gallery-button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px;
+    }
+
+    .btn {
+        padding: 8px;
+    }
+}
